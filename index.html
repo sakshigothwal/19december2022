@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>interHTML and input value</title>
+        <script></script>
+    </head>
+    <body>
+       <div data-x="1"> good morning sir</div>
+       <p class="myparagarph"></p>
+
+       <hr>
+
+       <form>
+        <lable for="fullname">fullname</lable>
+        <input type="text" id="fullname">
+
+        <lable for="fullname">gender</lable>
+        <select id="gender">
+            <option value="female">male</option>
+            <option value="female">female</option>
+            <option value="female">other</option>
+        </select>
+        <input type="button" value="submit" onclick="submitData()">
+       </form>
+       
+       <button onclick="oklabs()">Click me</button>
+       <script>
+        //i can write js code
+
+        //object.method
+        let element1 = document.querySelector('div[data-x="1"]');
+        let element2 = document.querySelector('p.myparagarph');
+
+        //global variable
+
+        var full_name = document.querySelector('#fullname');
+        console.log(element1.innerHTML);
+        console.log(element2.innerHTML);
+        element2.innerHTML = 'Hello, '+element1.innerHTML;
+        
+        //function defination
+        function oklabs(){
+            full_name.value = 'Hello' +element1.innerHTML;
+            console.log(" good morning sir")
+        }
+
+        //1. function defination
+        let d1 = document.querySelector('input#fullname');
+        let d2 = document.querySelector('select#gender');
+        function submitData(){
+            console.log(d1.value);
+            console.log(d2.value);
+        }
+       </script>
+    </body>
+    </html>
